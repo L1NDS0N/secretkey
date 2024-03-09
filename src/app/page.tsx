@@ -1,9 +1,5 @@
-import NewGame from "@/components/new-game";
-import Welcome from "@/components/welcome";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <Welcome/>
-    // <NewGame/>
-  )
+  redirect('/welcome')
 }
