@@ -1,59 +1,46 @@
+import Stepper from "@/components/XStepper";
 import XButton from "../../components/XButton";
+import XIcon from "../../components/XIcon";
 export default function NewGamePage() {
   return (
     <>
-      <section className="flex flex-col items-center justify-between p-24">
-        <div className="flex flex-col ">
-          <div className="flex flex-row">
+      <section className="flex w-full flex-col">
+        <div className="flex flex-col text-left">
+          <h2 className="font-bold">Configurações de partida</h2>
+          <span className="font-light">Personalize a partida como quiser</span>
+          <hr />
+        </div>
+        <div className="flex flex-col items-center gap-4 p-10">
+          <div className="flex">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-500">
-              <svg
-                className="h-7 w-7 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 5h4.5a3.5 3.5 0 1 1 0 7H8m0-7v7m0-7H6m2 7h6.5a3.5 3.5 0 1 1 0 7H8m0-7v7m0 0H6"
-                />
-              </svg>
+              <XIcon className="h-7 w-7 text-gray-800 dark:text-white" />
             </div>
-            <div className="ml-4 flex flex-col">
+            <div className="ml-4">
               <p className="text-xl font-bold">Palavras por turno</p>
-              <p className="text-lg font-normal">Palavras {}</p>
+              <p className="text-left font-light text-gray-500"> 1 Palavra</p>
+              <Stepper min={1} max={7} step={1} />
             </div>
           </div>
-          <ol className="mt-3 flex w-full items-center">
-            <li className="flex w-full items-center text-blue-600 after:inline-block after:h-1 after:w-full after:border-4 after:border-b after:border-blue-100 after:content-[''] dark:text-blue-500 dark:after:border-blue-800">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-800">
-                <p className="text-xs text-white">1</p>
-              </span>
-            </li>
-            <li className="flex w-full items-center after:inline-block after:h-1 after:w-full after:border-4 after:border-b after:border-gray-100 after:content-[''] dark:after:border-gray-700">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
-                <p className="text-xs text-white">1</p>
-              </span>
-            </li>
-            <li className="flex w-full items-center after:inline-block after:h-1 after:w-full after:border-4 after:border-b after:border-gray-100 after:content-[''] dark:after:border-gray-700">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
-                <p className="text-xs text-white">1</p>
-              </span>
-            </li>
-            <li className="flex w-full items-center after:inline-block after:h-1 after:w-full after:border-4 after:border-b after:border-gray-100 after:content-[''] dark:after:border-gray-700">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
-                <p className="text-xs text-white">1</p>
-              </span>
-            </li>
-            <li className="flex items-center">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
-                <p className="text-xs text-white">1</p>
-              </span>
-            </li>
-          </ol>
+          <div className="flex">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-500">
+              <XIcon className="h-7 w-7 text-gray-800 dark:text-white" />
+            </div>
+            <div className="ml-4">
+              <p className="text-xl font-bold">Tempo por turno</p>
+              <p className="text-left font-light text-gray-500">30 Segundos</p>
+              <Stepper min={30} max={210} step={30} />
+            </div>
+          </div>
+          <div className="flex">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-500">
+              <XIcon className="h-7 w-7 text-gray-800 dark:text-white" />
+            </div>
+            <div className="ml-4">
+              <p className="text-xl font-bold">Pulos por turno</p>
+              <p className="text-left font-light text-gray-500">30 Pulos</p>
+              <Stepper min={0} max={7} step={1} />
+            </div>
+          </div>
         </div>
       </section>
 
