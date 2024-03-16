@@ -1,7 +1,16 @@
+"use client";
+
 import Stepper from "@/components/XStepper";
+import { useRouter } from "next/navigation";
 import XButton from "../../components/XButton";
 import XIcon from "../../components/XIcon";
+
 export default function NewGamePage() {
+  const router = useRouter();
+  const play_game_uuid = crypto.randomUUID();
+
+  console.log({ play_game_uuid });
+
   return (
     <>
       <section className="flex w-full flex-col">
@@ -44,7 +53,9 @@ export default function NewGamePage() {
         </div>
       </section>
 
-      <XButton>Iniciar</XButton>
+      <XButton onClick={() => router.push(`/play/${play_game_uuid}`)}>
+        Iniciar
+      </XButton>
     </>
   );
 }
